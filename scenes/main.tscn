@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://caxtuy4ms7oms"]
+[gd_scene load_steps=6 format=3 uid="uid://caxtuy4ms7oms"]
 
 [ext_resource type="PackedScene" uid="uid://b3m87nobrgvqj" path="res://scenes/player.tscn" id="1_fnyou"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_vqm8e"]
 [ext_resource type="PackedScene" uid="uid://8n0psf23t81f" path="res://scenes/spawner.tscn" id="2_fbb0u"]
+[ext_resource type="Script" path="res://scenes/base_song.gd" id="5_wqab5"]
+[ext_resource type="AudioStream" uid="uid://bqm4rqib6k8mh" path="res://assets/music/Painting_Intense.ogg" id="6_vrydv"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_vqm8e")
@@ -10,3 +12,12 @@ script = ExtResource("1_vqm8e")
 [node name="SpawnedObject" parent="." instance=ExtResource("2_fbb0u")]
 
 [node name="Player" parent="." instance=ExtResource("1_fnyou")]
+
+[node name="base_song" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_vrydv")
+autoplay = true
+parameters/looping = false
+script = ExtResource("5_wqab5")
+second_song = ExtResource("6_vrydv")
+
+[connection signal="finished" from="base_song" to="base_song" method="_on_finished"]
