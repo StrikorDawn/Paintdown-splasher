@@ -1,12 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://caxtuy4ms7oms"]
+[gd_scene load_steps=3 format=3 uid="uid://caxtuy4ms7oms"]
 
 [ext_resource type="PackedScene" uid="uid://b3m87nobrgvqj" path="res://scenes/player.tscn" id="1_fnyou"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_vqm8e"]
-[ext_resource type="PackedScene" uid="uid://8n0psf23t81f" path="res://scenes/spawner.tscn" id="3_7mn15"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_vqm8e")
 
 [node name="Player" parent="." instance=ExtResource("1_fnyou")]
-
-[node name="Spawner" parent="." instance=ExtResource("3_7mn15")]

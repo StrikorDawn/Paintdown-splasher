@@ -41,16 +41,16 @@ func attack(direction):
 	can_attack = false
 	attack_area.set_monitoring(true)
 	visual_hitbox.visible = true
-	if direction == Vector2(-1,0):
+	if velocity.x < 0:
 		attack_marker.rotation_degrees = 180
 		attack_area.position.x = 40
-	elif direction == Vector2(1,0):
+	elif velocity.x > 0:
 		attack_marker.rotation_degrees = 0
 		attack_area.position.x = 40
-	elif direction == Vector2(0,-1):
+	elif velocity.y < 0:
 		attack_marker.rotation_degrees = 270
 		attack_area.position.x = 72
-	elif direction == Vector2(0,1):
+	elif velocity.y > 0:
 		attack_marker.rotation_degrees = 90
 		attack_area.position.x = 72
 	attack_timer.start()
