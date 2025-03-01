@@ -8,7 +8,7 @@ radius = 32.0
 height = 128.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3ky8"]
-size = Vector2(56, 128)
+size = Vector2(88, 160)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_n17q2")
@@ -20,18 +20,24 @@ shape = SubResource("CapsuleShape2D_hxph0")
 scale = Vector2(0.5, 1)
 texture = ExtResource("2_jwa75")
 
-[node name="Marker2D" type="Marker2D" parent="."]
+[node name="AttackMarker" type="Marker2D" parent="."]
 
-[node name="Area2D" type="Area2D" parent="Marker2D"]
-visible = false
+[node name="AttackArea" type="Area2D" parent="AttackMarker"]
 position = Vector2(40, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Marker2D/Area2D"]
-position = Vector2(28, 0)
+[node name="AttackCollision" type="CollisionShape2D" parent="AttackMarker/AttackArea"]
+position = Vector2(44, 0)
 shape = SubResource("RectangleShape2D_a3ky8")
 
-[node name="Visual Hitbox" type="Sprite2D" parent="Marker2D/Area2D/CollisionShape2D"]
+[node name="Visual Hitbox" type="Sprite2D" parent="AttackMarker/AttackArea/AttackCollision"]
+visible = false
 modulate = Color(1, 0, 0, 0.768627)
 position = Vector2(1.90735e-06, 0)
-scale = Vector2(0.4375, 1)
+scale = Vector2(0.6875, 1.25)
 texture = ExtResource("2_jwa75")
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
