@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxon2he4tn1h4"]
+[gd_scene load_steps=7 format=3 uid="uid://cxon2he4tn1h4"]
 
 [ext_resource type="Script" path="res://scripts/enemies/bucket_enemy.gd" id="1_q4kja"]
+[ext_resource type="AudioStream" uid="uid://btdnc50o3dkiy" path="res://assets/sfx/761503__valhallaproject__shield-hit.wav" id="2_6ougo"]
+[ext_resource type="AudioStream" uid="uid://lbu7qu7rwifq" path="res://assets/sfx/446115__justinvoke__wet-splat.wav" id="3_74pjf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ddujd"]
 radius = 32.0
@@ -28,3 +30,9 @@ sprite_frames = SubResource("SpriteFrames_m0h5g")
 shape = SubResource("CapsuleShape2D_c8ews")
 
 [node name="AttackTimer" type="Timer" parent="."]
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_6ougo")
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_74pjf")

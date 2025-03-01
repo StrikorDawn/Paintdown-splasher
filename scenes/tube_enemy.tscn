@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmlnrgcppk6oa"]
+[gd_scene load_steps=6 format=3 uid="uid://dmlnrgcppk6oa"]
 
 [ext_resource type="Script" path="res://scripts/enemies/tube_enemy.gd" id="1_3kt4u"]
+[ext_resource type="AudioStream" uid="uid://c58f4s1okqifs" path="res://assets/sfx/232135__yottasounds__splat-005.wav" id="2_twvj0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ytrf8"]
 radius = 16.0
@@ -28,3 +29,11 @@ sprite_frames = SubResource("SpriteFrames_vbucb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CapsuleShape2D_c2mi0")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_twvj0")
+pitch_scale = 0.9
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_twvj0")
+pitch_scale = 0.7

@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1qonsbh1jipx"]
+[gd_scene load_steps=7 format=3 uid="uid://c1qonsbh1jipx"]
 
 [ext_resource type="Script" path="res://scripts/enemies/glass_enemy.gd" id="1_xujcj"]
+[ext_resource type="AudioStream" uid="uid://c58f4s1okqifs" path="res://assets/sfx/232135__yottasounds__splat-005.wav" id="2_8dfvk"]
+[ext_resource type="AudioStream" uid="uid://d2d2w0lwfynak" path="res://assets/sfx/341070__hifijohn__breaking-glass.wav" id="3_bgogi"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j3jb7"]
 height = 64.0
@@ -27,3 +29,9 @@ sprite_frames = SubResource("SpriteFrames_dw7y7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CapsuleShape2D_m2ny4")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_8dfvk")
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_bgogi")
