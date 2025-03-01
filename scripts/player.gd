@@ -4,7 +4,7 @@ extends CharacterBody2D
 # Custom Signals
 ######################################
 signal player_attacking
-
+signal player_death
 ######################################
 # Node References
 ######################################
@@ -118,5 +118,8 @@ func take_damage(damage: int):
 	print(health)
 
 func die():
-	sprite_2d.rotation_degrees = 180
+	sprite_2d.rotation_degrees = -90
 	set_physics_process(false)
+	player_death.emit(visible)
+	
+	

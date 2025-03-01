@@ -20,6 +20,8 @@ script = ExtResource("1_vqm8e")
 [node name="Player" parent="." instance=ExtResource("1_fnyou")]
 z_index = 100
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
 [node name="MousePlayer" parent="." instance=ExtResource("3_7mn15")]
 
 [node name="base_song" type="AudioStreamPlayer2D" parent="."]
