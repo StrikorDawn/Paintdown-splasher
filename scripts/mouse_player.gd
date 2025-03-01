@@ -3,7 +3,7 @@ extends Node2D
 ######################################
 # Custom Signals
 ######################################
-signal spawn_enemy(enemy_scene, position)
+signal spawn_enemy
 
 ######################################
 # Node References

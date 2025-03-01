@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crrxlkwuvsa24"
-path="res://.godot/imported/Easil.png-b7f737e96af7f9348c060251bdbec9ab.ctex"
+uid="uid://c6dgxa8b7nep1"
+path="res://.godot/imported/Start Button.png-d1d4b3d7f5284f74c19d2df1602465e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite Sheets/Easil.png"
-dest_files=["res://.godot/imported/Easil.png-b7f737e96af7f9348c060251bdbec9ab.ctex"]
+source_file="res://assets/sprites/Start Button.png"
+dest_files=["res://.godot/imported/Start Button.png-d1d4b3d7f5284f74c19d2df1602465e4.ctex"]
 
 [params]
 

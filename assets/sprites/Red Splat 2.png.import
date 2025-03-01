@@ -2,16 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://co8wulhyqmiwl"
-path="res://.godot/imported/Red Splat 1.png-43cadcdc897adb98eab6d4cf6ca7b691.ctex"
+<<<<<<< HEAD:Sprite Sheets/Splatters/Red Splat 2.png.import
+uid="uid://bnspbgtkpuxq7"
+path="res://.godot/imported/Red Splat 2.png-2c00c1ffbdca922098aa51ca10c5c395.ctex"
+=======
+uid="uid://n1hfenatpx1m"
+path="res://.godot/imported/Red Splat 2.png-97112720b35626a6f43b8cef9a9bd347.ctex"
+>>>>>>> 9e200e957fce26c49aef048d022bf054c9c6e688:assets/sprites/Red Splat 2.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite Sheets/Splatters/Red Splat 1.png"
-dest_files=["res://.godot/imported/Red Splat 1.png-43cadcdc897adb98eab6d4cf6ca7b691.ctex"]
+source_file="res://assets/sprites/Red Splat 2.png"
+dest_files=["res://.godot/imported/Red Splat 2.png-97112720b35626a6f43b8cef9a9bd347.ctex"]
 
 [params]
 
