@@ -8,7 +8,6 @@ var health: int
 var move_speed: int
 var attack_damage: int
 var color: String
-var attack_type: String = "melee"  # "melee" or "ranged"
 var can_attack: bool = true
 
 @onready var sprite: AnimatedSprite2D = $CollisionShape2D/Sprite
