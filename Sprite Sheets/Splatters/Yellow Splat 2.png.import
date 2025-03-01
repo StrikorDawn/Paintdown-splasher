@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
+uid="uid://bh0ylxkakp1mp"
+=======
 uid="uid://b6hu84smknd50"
+>>>>>>> 91a865a41857695e30241331e6f57f43dfd1e066
 path="res://.godot/imported/Yellow Splat 2.png-815ea677e6af48dbf48a5f0c64f76ca7.ctex"
 metadata={
 "vram_texture": false

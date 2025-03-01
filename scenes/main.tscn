@@ -33,6 +33,7 @@ parameters/looping = false
 script = ExtResource("5_wqab5")
 second_song = ExtResource("6_vrydv")
 
+<<<<<<< HEAD
 [node name="death_noise" type="AudioStreamPlayer2D" parent="."]
 visible = false
 
@@ -51,5 +52,8 @@ text = "Hello World"
 wait_time = 120.0
 one_shot = true
 autostart = true
+=======
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+>>>>>>> 518adf28221cf289cf43e8a2bb812dfd2d27fe6d
 
 [connection signal="finished" from="base_song" to="base_song" method="_on_finished"]
