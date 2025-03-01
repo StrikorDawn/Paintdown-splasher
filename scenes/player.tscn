@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3m87nobrgvqj"]
+[gd_scene load_steps=5 format=3 uid="uid://b3m87nobrgvqj"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_n17q2"]
 [ext_resource type="Texture2D" uid="uid://bawn2lwxybv23" path="res://icon.svg" id="2_jwa75"]
@@ -7,12 +7,31 @@
 radius = 32.0
 height = 128.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3ky8"]
+size = Vector2(56, 128)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_n17q2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="PlayerCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_hxph0")
 
-[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+[node name="Sprite2D" type="Sprite2D" parent="PlayerCollision"]
 scale = Vector2(0.5, 1)
+texture = ExtResource("2_jwa75")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Marker2D"]
+visible = false
+position = Vector2(40, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marker2D/Area2D"]
+position = Vector2(28, 0)
+shape = SubResource("RectangleShape2D_a3ky8")
+
+[node name="Visual Hitbox" type="Sprite2D" parent="Marker2D/Area2D/CollisionShape2D"]
+modulate = Color(1, 0, 0, 0.768627)
+position = Vector2(1.90735e-06, 0)
+scale = Vector2(0.4375, 1)
 texture = ExtResource("2_jwa75")

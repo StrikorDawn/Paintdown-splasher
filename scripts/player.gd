@@ -1,9 +1,33 @@
 extends CharacterBody2D
 
-#signal health_depleted
+######################################
+# Custom Signals
+######################################
 
-#var health = 100.0
-#const DAMAGE_RATE = 5.0
+
+######################################
+# Preloaded Scenes
+######################################
+
+
+######################################
+# Node References
+######################################
+
+
+######################################
+# Other Player Variables
+######################################
+
+
+######################################
+# Player Check variables
+######################################
+
+
+######################################
+# Player State Variables
+######################################
 
 func _physics_process(delta: float):
 	if Input.is_action_just_pressed("quit"):
@@ -11,15 +35,16 @@ func _physics_process(delta: float):
 	var direction = Input.get_vector("move_left","move_right","move_up","move_down")
 	velocity = direction * 300
 	move_and_slide()
+
+
+func attack(direction):
 	
-	#if velocity.length() > 0.0:
-		#%HappyBoo.play_walk_animation()
-	#else:
-		#%HappyBoo.play_idle_animation()
-	#
-	#var overlapping_mobs = %HurtBox.get_overlapping_bodies()
-	#if overlapping_mobs.size() > 0:
-		#health -= DAMAGE_RATE * overlapping_mobs.size() * delta
-		#%ProgressBar.value = health
-		#if health <= 0.0:
-			#health_depleted.emit()
+	if direction == Vector2(-1,0):
+		pass
+	elif direction == Vector2(1,0):
+		pass
+	elif direction == Vector2(0,-1):
+		pass
+	elif direction == Vector2(0,1):
+		pass
+	
