@@ -14,6 +14,7 @@ const BUCKET_ENEMY = preload("res://scenes/bucket_enemy.tscn")
 @onready var player: CharacterBody2D = $Player
 @onready var enemy: EnemyClass
 @onready var death_player: AudioStreamPlayer2D = $death_noise
+
 ######################################
 # Setup Signals
 ######################################

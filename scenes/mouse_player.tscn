@@ -1,11 +1,135 @@
-[gd_scene load_steps=2 format=3 uid="uid://8n0psf23t81f"]
+[gd_scene load_steps=21 format=3 uid="uid://8n0psf23t81f"]
 
 [ext_resource type="Script" path="res://scripts/mouse_player.gd" id="1_rp4vk"]
+[ext_resource type="Texture2D" uid="uid://bqx6gbi6mq2og" path="res://assets/sprites/bucket/Paint Can Blue.png" id="2_1qetj"]
+[ext_resource type="Texture2D" uid="uid://qi2acw1umctx" path="res://assets/sprites/bucket/Paint Can Red.png" id="3_hmgg2"]
+[ext_resource type="Texture2D" uid="uid://dwibguyionvqj" path="res://assets/sprites/bucket/Paint Can Yellow.png" id="4_a0uj0"]
+[ext_resource type="Texture2D" uid="uid://bcabi2wi5cx26" path="res://assets/sprites/flask/Flask Blue.png" id="5_wxttv"]
+[ext_resource type="Texture2D" uid="uid://s0wmijq0pdj0" path="res://assets/sprites/flask/Flask Red.png" id="6_qj23q"]
+[ext_resource type="Texture2D" uid="uid://day1nyj6e875t" path="res://assets/sprites/flask/Flask Yellow.png" id="7_wjkmv"]
+[ext_resource type="Texture2D" uid="uid://c0wncjmf4ovoq" path="res://assets/sprites/tube/Tube Blue.png" id="8_8ov6g"]
+[ext_resource type="Texture2D" uid="uid://r2j6l55lf0po" path="res://assets/sprites/tube/Tube Red.png" id="9_38nmq"]
+[ext_resource type="Texture2D" uid="uid://b1bknoljelxs7" path="res://assets/sprites/tube/Tube Yellow.png" id="10_mpg7c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjdln"]
+atlas = ExtResource("2_1qetj")
+region = Rect2(0, 0, 40, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihm73"]
+atlas = ExtResource("3_hmgg2")
+region = Rect2(0, 0, 40, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xu2nm"]
+atlas = ExtResource("4_a0uj0")
+region = Rect2(0, 0, 40, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65o55"]
+atlas = ExtResource("5_wxttv")
+region = Rect2(0, 0, 40, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ebfg"]
+atlas = ExtResource("6_qj23q")
+region = Rect2(0, 0, 40, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odb6n"]
+atlas = ExtResource("7_wjkmv")
+region = Rect2(0, 0, 40, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68v5l"]
+atlas = ExtResource("8_8ov6g")
+region = Rect2(0, 0, 40, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mx823"]
+atlas = ExtResource("9_38nmq")
+region = Rect2(0, 0, 40, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s50st"]
+atlas = ExtResource("10_mpg7c")
+region = Rect2(0, 0, 40, 70)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6hbsy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjdln")
+}],
+"loop": true,
+"name": &"BucketBlue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihm73")
+}],
+"loop": true,
+"name": &"BucketRed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xu2nm")
+}],
+"loop": true,
+"name": &"BucketYellow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65o55")
+}],
+"loop": true,
+"name": &"GlassBlue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ebfg")
+}],
+"loop": true,
+"name": &"GlassRed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odb6n")
+}],
+"loop": true,
+"name": &"GlassYellow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68v5l")
+}],
+"loop": true,
+"name": &"TubeBlue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mx823")
+}],
+"loop": true,
+"name": &"TubeRed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s50st")
+}],
+"loop": true,
+"name": &"TubeYellow",
+"speed": 5.0
+}]
 
 [node name="MousePlayer" type="Node2D"]
 script = ExtResource("1_rp4vk")
 
 [node name="AddCurrency" type="Timer" parent="."]
 wait_time = 0.25
+
+[node name="PreviewSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6hbsy")
+animation = &"GlassYellow"
 
 [connection signal="timeout" from="AddCurrency" to="." method="_on_add_currency_timeout"]
