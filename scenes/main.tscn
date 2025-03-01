@@ -7,3 +7,5 @@
 script = ExtResource("1_vqm8e")
 
 [node name="Player" parent="." instance=ExtResource("1_fnyou")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
