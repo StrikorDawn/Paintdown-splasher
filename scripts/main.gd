@@ -17,11 +17,8 @@ const big_yellow = preload("res://assets/sprites/Yellow Splat 1.png")
 @onready var player: CharacterBody2D = $Player
 @onready var enemy: EnemyClass
 @onready var death_player: AudioStreamPlayer2D = $death_noise
-<<<<<<< HEAD
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
-=======
 
->>>>>>> 26641cbd9045af37bb8eff5bc83c6444b415da1c
 ######################################
 # Setup Signals
 ######################################
@@ -83,3 +80,7 @@ func _enemy_killed(sound, position, color):
 		splatter.rotation_degrees = randf_range(0, 360)
 		canvas_layer.add_child(splatter)
 	death_player.play()
+
+
+func _on_countdown_timer_timeout() -> void:
+	

@@ -1,19 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://caxtuy4ms7oms"]
+[gd_scene load_steps=7 format=3 uid="uid://caxtuy4ms7oms"]
 
 [ext_resource type="PackedScene" uid="uid://b3m87nobrgvqj" path="res://scenes/player.tscn" id="1_fnyou"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_vqm8e"]
 [ext_resource type="PackedScene" uid="uid://8n0psf23t81f" path="res://scenes/mouse_player.tscn" id="3_7mn15"]
-[ext_resource type="Script" path="res://scripts/camera_2d.gd" id="3_p4vjc"]
 [ext_resource type="Script" path="res://scripts/base_song.gd" id="5_wqab5"]
 [ext_resource type="Script" path="res://scripts/timer.gd" id="6_rkckm"]
 [ext_resource type="AudioStream" uid="uid://bqm4rqib6k8mh" path="res://assets/music/Painting_Intense.ogg" id="6_vrydv"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_6hude"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_vqm8e")
 
 [node name="Player" parent="." instance=ExtResource("1_fnyou")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="MousePlayer" parent="." instance=ExtResource("3_7mn15")]
 
@@ -46,22 +45,4 @@ autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
-script = ExtResource("3_p4vjc")
-target = NodePath("../Player")
-
-[node name="VictoryScreen" type="CanvasLayer" parent="."]
-
-[node name="TextureRect" type="TextureRect" parent="VictoryScreen"]
-modulate = Color(0.21, 0.21, 0.21, 0.686275)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 2497.0
-offset_bottom = 1627.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("CanvasTexture_6hude")
-
 [connection signal="finished" from="base_song" to="base_song" method="_on_finished"]
-[connection signal="timeout" from="timer/countdown_timer" to="." method="_on_countdown_timer_timeout"]
