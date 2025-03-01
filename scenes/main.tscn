@@ -2,9 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://b3m87nobrgvqj" path="res://scenes/player.tscn" id="1_fnyou"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_vqm8e"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://8n0psf23t81f" path="res://scenes/mouse_player.tscn" id="3_7mn15"]
 [ext_resource type="Script" path="res://base_song.gd" id="5_wqab5"]
 [ext_resource type="Script" path="res://scenes/timer.gd" id="6_rkckm"]
+=======
+[ext_resource type="PackedScene" uid="uid://8n0psf23t81f" path="res://scenes/spawner.tscn" id="3_7mn15"]
+[ext_resource type="Script" path="res://scenes/base_song.gd" id="5_wqab5"]
+>>>>>>> 91a865a41857695e30241331e6f57f43dfd1e066
 [ext_resource type="AudioStream" uid="uid://bqm4rqib6k8mh" path="res://assets/music/Painting_Intense.ogg" id="6_vrydv"]
 
 [node name="Main" type="Node"]
@@ -14,7 +19,11 @@ script = ExtResource("1_vqm8e")
 visible = false
 
 [node name="MousePlayer" parent="." instance=ExtResource("3_7mn15")]
+<<<<<<< HEAD
 visible = false
+=======
+script = null
+>>>>>>> 91a865a41857695e30241331e6f57f43dfd1e066
 
 [node name="base_song" type="AudioStreamPlayer2D" parent="."]
 visible = false
