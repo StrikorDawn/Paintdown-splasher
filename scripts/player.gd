@@ -120,3 +120,4 @@ func take_damage(damage: int):
 func die():
 	sprite_2d.rotation_degrees = 180
 	set_physics_process(false)
+	
