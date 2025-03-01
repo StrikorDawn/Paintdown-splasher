@@ -1,7 +1,6 @@
 extends CharacterBody2D
 class_name EnemyClass
 
-<<<<<<< HEAD
 signal enemy_attack
 
 var health: int
@@ -36,10 +35,3 @@ func die():
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	print(body.name)
 	enemy_attack.emit(attack_damage, body)
-=======
-var health : int
-var move_speed : int
-var size : float
-var color
-var level : int
->>>>>>> de4ebec32aac8e93d2760d49e537626b9461ee55
