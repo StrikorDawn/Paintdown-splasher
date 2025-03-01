@@ -36,7 +36,6 @@ second_song = ExtResource("6_vrydv")
 visible = false
 
 [node name="picture_frame" type="Sprite2D" parent="."]
-z_index = -1
 position = Vector2(532, 430)
 scale = Vector2(3.025, 1.95)
 texture = ExtResource("6_mdlg7")
@@ -84,14 +83,12 @@ one_shot = true
 autostart = true
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 script = ExtResource("3_p4vjc")
 target = NodePath("../Player")
 
 [node name="VictoryScreen" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="TextureRect" type="TextureRect" parent="VictoryScreen"]
 modulate = Color(0.21, 0.21, 0.21, 0.686275)
@@ -103,10 +100,5 @@ offset_bottom = 1627.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CanvasTexture_6hude")
-
-[node name="Winner" type="Label" parent="VictoryScreen/TextureRect"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
 
 [connection signal="finished" from="base_song" to="base_song" method="_on_finished"]

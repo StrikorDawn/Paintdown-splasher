@@ -18,6 +18,7 @@ const big_yellow = preload("res://assets/sprites/Yellow Splat 1.png")
 @onready var enemy: EnemyClass
 @onready var death_player: AudioStreamPlayer2D = $death_noise
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
+@onready var winner: Label = $VictoryScreen/TextureRect/Winner
 
 ######################################
 # Setup Signals
@@ -25,6 +26,8 @@ const big_yellow = preload("res://assets/sprites/Yellow Splat 1.png")
 func _ready():
 	mouse_player.spawn_enemy.connect(_spawn_enemy)
 	player.player_attacking.connect(_player_attack)
+	player.player_death.connect(player_died)
+	canvas_layer.visible = false
 	
 
 func _spawn_enemy(position: Vector2, color: String, level: int):
@@ -81,6 +84,24 @@ func _enemy_killed(sound, position, color):
 		canvas_layer.add_child(splatter)
 	death_player.play()
 
-
-func _on_countdown_timer_timeout() -> void:
+func player_died(is_visible, is_dead):
+	canvas_layer.visible = true
+	winner_text(is_dead)
+	player.set_physics_process(false)
+	if Input.is_anything_pressed():
+		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 	
+func _on_countdown_timer_timeout() -> void:
+	canvas_layer.visible = true
+	winner_text(false)
+	player.set_physics_process(false)
+	if Input.is_anything_pressed():
+		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+func winner_text(is_dead):
+	var player : String
+	if is_dead:
+		player = "MOUSE"
+	elif not is_dead:
+		player = "KEYBOARD"
+	winner.text = player + " IS THE WINNER!!!"
