@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name EnemyClass
 
 signal enemy_attack
+signal enemy_death
 
 var health: int
 var move_speed: int
@@ -15,6 +16,11 @@ var can_attack: bool = true
 @onready var attack_timer: Timer = $AttackTimer
 @onready var player = get_tree().get_first_node_in_group("Player")
 @onready var hitbox : Area2D = $Hitbox
+<<<<<<< HEAD
+@onready var hit_sound : AudioStreamPlayer2D = $HitSound
+@onready var death_sound : AudioStreamPlayer2D = $DeathSound
+=======
+>>>>>>> 518adf28221cf289cf43e8a2bb812dfd2d27fe6d
 
 func _ready():
 	hitbox.body_entered.connect(_on_hitbox_body_entered)
@@ -27,10 +33,12 @@ func _physics_process(_delta: float):
 func take_damage(amount: int):
 	health -= amount
 	print(color + " " + name + " took damage! Health:", health)  # Debugging
+	hit_sound.play()
 	if health <= 0:
 		die()
 
 func die():
+	enemy_death.emit(death_sound, global_position, color)
 	queue_free()  # Can add effects here
 
 func _on_hitbox_body_entered(body: Node2D) -> void:

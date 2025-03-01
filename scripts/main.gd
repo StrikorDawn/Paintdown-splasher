@@ -13,6 +13,7 @@ const BUCKET_ENEMY = preload("res://scenes/bucket_enemy.tscn")
 @onready var mouse_player = $MousePlayer
 @onready var player: CharacterBody2D = $Player
 @onready var enemy: EnemyClass
+@onready var death_player: AudioStreamPlayer2D = $death_noise
 ######################################
 # Setup Signals
 ######################################
@@ -34,10 +35,12 @@ func _spawn_enemy(position: Vector2, color: String, level: int):
 	enemy.color = color
 	enemy.add_to_group("Enemy")
 	enemy.enemy_attack.connect(_enemy_attack)
+	enemy.enemy_death.connect(_enemy_killed)
 	add_child(enemy)
 	
 func _player_attack(damage, attack_area):
 	var bodies = attack_area.get_overlapping_bodies()
+	
 	for body in bodies:
 		if body.is_in_group("Enemy"):  # Check if it's an enemy
 			body.take_damage(damage)  # Call the enemy's damage function
@@ -45,3 +48,8 @@ func _player_attack(damage, attack_area):
 func _enemy_attack(damage, body):
 	if body.is_in_group("Player"):  # Check if it's an enemy
 		body.take_damage(damage)  # Call the enemy's damage function
+
+func _enemy_killed(sound, position, color):
+	var dying_noise = sound.stream
+	death_player.stream = dying_noise
+	death_player.play()
