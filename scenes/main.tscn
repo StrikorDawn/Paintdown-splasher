@@ -13,7 +13,6 @@ script = ExtResource("1_vqm8e")
 [node name="Player" parent="." instance=ExtResource("1_fnyou")]
 
 [node name="MousePlayer" parent="." instance=ExtResource("3_7mn15")]
-script = null
 
 [node name="base_song" type="AudioStreamPlayer2D" parent="."]
 visible = false
