@@ -1,4 +1,5 @@
-extends CharacterBody2D
+extends EnemyClass
+class_name GlassEnemy
 
 @onready var player = get_node("/root/Main/Player")
 
