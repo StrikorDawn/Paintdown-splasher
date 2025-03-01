@@ -14,20 +14,23 @@ signal player_attacking
 @onready var visual_hitbox: Sprite2D = $"AttackMarker/AttackArea/AttackCollision/Visual Hitbox"
 @onready var attack_timer: Timer = $AttackLengthTimer
 @onready var attack_cooldown_timer: Timer = $AttackCooldownTimer
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 ######################################
-# Player Check variables
+# Player Check Variables
 ######################################
-var can_attack : bool = true
+var can_attack: bool = true
+var attack_buffered: bool = false  # Stores attack input during cooldown
 
 ######################################
 # Other Player Variables
 ######################################
-var health : int = 100
-var damage : int = 20
-var last_direction : Vector2 = Vector2(1, 0)  # Default facing right
+var health: int = 100
+var damage: int = 20
+var last_direction: Vector2 = Vector2(1, 0)  # Default facing right
+
 ######################################
-# Player State Variables
+# Player State Functions
 ######################################
 func _ready() -> void:
 	add_to_group("Player")
@@ -36,22 +39,27 @@ func _ready() -> void:
 func _physics_process(_delta: float):
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
-	var direction = Input.get_vector("move_left","move_right","move_up","move_down")
+
+	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	handle_animation(direction)
-	
+
 	if direction != Vector2.ZERO:
 		last_direction = direction
-		
-	if Input.is_action_just_pressed("attack") and can_attack == true:
-		attack(direction)
-	
+
+	# Handle attack input with buffering
+	if Input.is_action_just_pressed("attack"):
+		if can_attack:
+			attack()
+		else:
+			attack_buffered = true  # Store input for later use
+
 	if health <= 0:
 		die()
-		
+
 	velocity = direction * 300
 	move_and_slide()
 
-func handle_animation(direction):
+func handle_animation(direction: Vector2):
 	if direction.x < 0:
 		sprite_2d.flip_h = true
 		sprite_2d.play("walking")
@@ -69,9 +77,9 @@ func handle_animation(direction):
 		else:
 			sprite_2d.play("idle")
 
-
-func attack(direction):
+func attack():
 	can_attack = false
+	attack_buffered = false  # Clear buffer when attacking
 	attack_area.set_monitoring(true)
 	visual_hitbox.visible = true
 
@@ -89,6 +97,7 @@ func attack(direction):
 		attack_marker.rotation_degrees = 90
 		attack_area.position.x = 72
 
+	animation_player.play("swing")
 	attack_timer.start()
 
 func _on_attack_area_entered(body: Node2D) -> void:
@@ -101,8 +110,10 @@ func _on_attack_timer_timeout() -> void:
 
 func _on_attack_cooldown_timer_timeout() -> void:
 	can_attack = true
+	if attack_buffered:  # If attack was buffered, execute it immediately
+		attack()
 
-func take_damage(damage):
+func take_damage(damage: int):
 	health -= damage
 	print(health)
 
