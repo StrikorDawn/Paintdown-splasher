@@ -1,11 +1,108 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3m87nobrgvqj"]
+[gd_scene load_steps=19 format=3 uid="uid://b3m87nobrgvqj"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_n17q2"]
+[ext_resource type="Texture2D" uid="uid://cgglvdqoq7ast" path="res://assets/sprites/painter/Idle Animation.png" id="2_arv45"]
 [ext_resource type="Texture2D" uid="uid://bawn2lwxybv23" path="res://icon.svg" id="2_jwa75"]
+[ext_resource type="Texture2D" uid="uid://ds1vbnwo44d22" path="res://assets/sprites/painter/Walking Animation.png" id="3_kxs7h"]
+[ext_resource type="Texture2D" uid="uid://j4x5okesqnl2" path="res://assets/sprites/painter/Front Walking.png" id="4_c5fps"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hxph0"]
 radius = 32.0
 height = 128.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ud3ru"]
+atlas = ExtResource("2_arv45")
+region = Rect2(0, 0, 50, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyvya"]
+atlas = ExtResource("2_arv45")
+region = Rect2(50, 0, 50, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwlk4"]
+atlas = ExtResource("2_arv45")
+region = Rect2(0, 60, 50, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wv8op"]
+atlas = ExtResource("3_kxs7h")
+region = Rect2(0, 0, 50, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tj2mm"]
+atlas = ExtResource("3_kxs7h")
+region = Rect2(50, 0, 50, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hug3g"]
+atlas = ExtResource("3_kxs7h")
+region = Rect2(0, 60, 50, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7as2s"]
+atlas = ExtResource("4_c5fps")
+region = Rect2(0, 0, 50, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjj24"]
+atlas = ExtResource("4_c5fps")
+region = Rect2(50, 0, 50, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwwsd"]
+atlas = ExtResource("4_c5fps")
+region = Rect2(0, 60, 50, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8qtv"]
+atlas = ExtResource("4_c5fps")
+region = Rect2(50, 60, 50, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qgyg8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ud3ru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyvya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwlk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyvya")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wv8op")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tj2mm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wv8op")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hug3g")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7as2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjj24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwwsd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8qtv")
+}],
+"loop": true,
+"name": &"walking_up",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3ky8"]
 size = Vector2(88, 160)
@@ -16,9 +113,14 @@ script = ExtResource("1_n17q2")
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_hxph0")
 
-[node name="Sprite2D" type="Sprite2D" parent="PlayerCollision"]
-scale = Vector2(0.5, 1)
-texture = ExtResource("2_jwa75")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="PlayerCollision"]
+texture_filter = 1
+position = Vector2(8, 0)
+scale = Vector2(1.6, 1.86667)
+sprite_frames = SubResource("SpriteFrames_qgyg8")
+animation = &"walking_up"
+frame = 2
+frame_progress = 0.0124203
 
 [node name="AttackMarker" type="Marker2D" parent="."]
 
@@ -36,8 +138,13 @@ position = Vector2(1.90735e-06, 0)
 scale = Vector2(0.6875, 1.25)
 texture = ExtResource("2_jwa75")
 
-[node name="AttackTimer" type="Timer" parent="."]
+[node name="AttackLengthTimer" type="Timer" parent="."]
 wait_time = 0.25
 one_shot = true
 
-[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[node name="AttackCooldownTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="body_entered" from="AttackMarker/AttackArea" to="." method="_on_attack_area_entered"]
+[connection signal="timeout" from="AttackLengthTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="AttackCooldownTimer" to="." method="_on_attack_cooldown_timer_timeout"]

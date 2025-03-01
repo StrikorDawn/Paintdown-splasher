@@ -1,16 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1qonsbh1jipx"]
+[gd_scene load_steps=5 format=3 uid="uid://c1qonsbh1jipx"]
 
 [ext_resource type="Script" path="res://scripts/enemies/glass_enemy.gd" id="1_xujcj"]
-[ext_resource type="Texture2D" uid="uid://bawn2lwxybv23" path="res://icon.svg" id="2_t4bc4"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_iwnqn"]
-radius = 62.2896
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j3jb7"]
+height = 64.0
 
-[node name="Enemy1" type="CharacterBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_dw7y7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m2ny4"]
+radius = 16.0
+height = 80.0
+
+[node name="GlassEnemy" type="CharacterBody2D"]
 script = ExtResource("1_xujcj")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_t4bc4")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_iwnqn")
+shape = SubResource("CapsuleShape2D_j3jb7")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="CollisionShape2D"]
+scale = Vector2(0.8, 0.711111)
+sprite_frames = SubResource("SpriteFrames_dw7y7")
+
+[node name="AttackTimer" type="Timer" parent="."]
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CapsuleShape2D_m2ny4")

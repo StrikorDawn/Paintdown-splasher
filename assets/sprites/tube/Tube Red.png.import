@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds1vbnwo44d22"
-path="res://.godot/imported/Walking Animation.png-112399e8c737d8a912baf54a01e7bd05.ctex"
+uid="uid://r2j6l55lf0po"
+path="res://.godot/imported/Tube Red.png-712330cd8b6001ba9424c0a003b5b4a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite Sheets/Painter/Walking Animation.png"
-dest_files=["res://.godot/imported/Walking Animation.png-112399e8c737d8a912baf54a01e7bd05.ctex"]
+source_file="res://assets/sprites/tube/Tube Red.png"
+dest_files=["res://.godot/imported/Tube Red.png-712330cd8b6001ba9424c0a003b5b4a0.ctex"]
 
 [params]
 

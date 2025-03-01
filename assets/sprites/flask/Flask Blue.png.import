@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0wncjmf4ovoq"
-path="res://.godot/imported/Tube Blue.png-93713ffe96527a803cc07735c3d5a150.ctex"
+uid="uid://bcabi2wi5cx26"
+path="res://.godot/imported/Flask Blue.png-b00b3435324adb0419e6c3c1141fee95.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite Sheets/Tube/Tube Blue.png"
-dest_files=["res://.godot/imported/Tube Blue.png-93713ffe96527a803cc07735c3d5a150.ctex"]
+source_file="res://assets/sprites/flask/Flask Blue.png"
+dest_files=["res://.godot/imported/Flask Blue.png-b00b3435324adb0419e6c3c1141fee95.ctex"]
 
 [params]
 

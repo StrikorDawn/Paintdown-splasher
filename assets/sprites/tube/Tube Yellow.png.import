@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgglvdqoq7ast"
-path="res://.godot/imported/Idle Animation.png-9d8cf0372241250c0404963f3f07e06f.ctex"
+uid="uid://b1bknoljelxs7"
+path="res://.godot/imported/Tube Yellow.png-0397763e2863e2502190c6d827576b49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite Sheets/Painter/Idle Animation.png"
-dest_files=["res://.godot/imported/Idle Animation.png-9d8cf0372241250c0404963f3f07e06f.ctex"]
+source_file="res://assets/sprites/tube/Tube Yellow.png"
+dest_files=["res://.godot/imported/Tube Yellow.png-0397763e2863e2502190c6d827576b49.ctex"]
 
 [params]
 

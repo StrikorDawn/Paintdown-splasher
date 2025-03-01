@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://day1nyj6e875t"
-path="res://.godot/imported/Flask Yellow.png-8a19cebb02e76b5c908e5c54f807b1b3.ctex"
+uid="uid://s0wmijq0pdj0"
+path="res://.godot/imported/Flask Red.png-4382f7db1cad638b1899e4dc0b5577ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite Sheets/Flask/Flask Yellow.png"
-dest_files=["res://.godot/imported/Flask Yellow.png-8a19cebb02e76b5c908e5c54f807b1b3.ctex"]
+source_file="res://assets/sprites/flask/Flask Red.png"
+dest_files=["res://.godot/imported/Flask Red.png-4382f7db1cad638b1899e4dc0b5577ed.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qi2acw1umctx"
-path="res://.godot/imported/Paint Can Red.png-2e3db195ee42d0729bd305390f2730be.ctex"
+uid="uid://ds1vbnwo44d22"
+path="res://.godot/imported/Walking Animation.png-b57e93a3b3f98a159b659a7d8c2726ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite Sheets/Paint Can/Paint Can Red.png"
-dest_files=["res://.godot/imported/Paint Can Red.png-2e3db195ee42d0729bd305390f2730be.ctex"]
+source_file="res://assets/sprites/painter/Walking Animation.png"
+dest_files=["res://.godot/imported/Walking Animation.png-b57e93a3b3f98a159b659a7d8c2726ee.ctex"]
 
 [params]
 

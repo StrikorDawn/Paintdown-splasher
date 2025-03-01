@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmlnrgcppk6oa"]
+
+[ext_resource type="Script" path="res://scripts/enemies/tube_enemy.gd" id="1_3kt4u"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ytrf8"]
+radius = 16.0
+height = 80.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vbucb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c2mi0"]
+radius = 24.0
+height = 96.0
+
+[node name="TubeEnemy" type="CharacterBody2D"]
+script = ExtResource("1_3kt4u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ytrf8")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="CollisionShape2D"]
+scale = Vector2(1.2, 1.14286)
+sprite_frames = SubResource("SpriteFrames_vbucb")
+
+[node name="AttackTimer" type="Timer" parent="."]
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CapsuleShape2D_c2mi0")

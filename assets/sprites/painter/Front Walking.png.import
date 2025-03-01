@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s0wmijq0pdj0"
-path="res://.godot/imported/Flask Red.png-519622b03fc024bbe093db50d9cc6b88.ctex"
+uid="uid://j4x5okesqnl2"
+path="res://.godot/imported/Front Walking.png-3b672c4d001456d8b6957032a2e15fe4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite Sheets/Flask/Flask Red.png"
-dest_files=["res://.godot/imported/Flask Red.png-519622b03fc024bbe093db50d9cc6b88.ctex"]
+source_file="res://assets/sprites/painter/Front Walking.png"
+dest_files=["res://.godot/imported/Front Walking.png-3b672c4d001456d8b6957032a2e15fe4.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r2j6l55lf0po"
-path="res://.godot/imported/Tube Red.png-bb033562f0822048811831f89f369095.ctex"
+uid="uid://dwibguyionvqj"
+path="res://.godot/imported/Paint Can Yellow.png-f3a89995c50ff827d26d7d47e71a6fed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite Sheets/Tube/Tube Red.png"
-dest_files=["res://.godot/imported/Tube Red.png-bb033562f0822048811831f89f369095.ctex"]
+source_file="res://assets/sprites/bucket/Paint Can Yellow.png"
+dest_files=["res://.godot/imported/Paint Can Yellow.png-f3a89995c50ff827d26d7d47e71a6fed.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcabi2wi5cx26"
-path="res://.godot/imported/Flask Blue.png-b11ef32c9546e531de93a4e6cd8e743c.ctex"
+uid="uid://qi2acw1umctx"
+path="res://.godot/imported/Paint Can Red.png-07b4a3d98b302d991c83122f5da1d510.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite Sheets/Flask/Flask Blue.png"
-dest_files=["res://.godot/imported/Flask Blue.png-b11ef32c9546e531de93a4e6cd8e743c.ctex"]
+source_file="res://assets/sprites/bucket/Paint Can Red.png"
+dest_files=["res://.godot/imported/Paint Can Red.png-07b4a3d98b302d991c83122f5da1d510.ctex"]
 
 [params]
 
