@@ -17,8 +17,12 @@ const big_yellow = preload("res://assets/sprites/Yellow Splat 1.png")
 @onready var player: CharacterBody2D = $Player
 @onready var enemy: EnemyClass
 @onready var death_player: AudioStreamPlayer2D = $death_noise
+<<<<<<< HEAD
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
 @onready var winner: Label = $VictoryScreen/TextureRect/Winner
+=======
+@onready var picture_frame: CanvasLayer = $CanvasLayer
+>>>>>>> e2b2b59d3f9a636833ea361b54523257b830c9f4
 
 ######################################
 # Setup Signals
@@ -67,21 +71,22 @@ func _enemy_killed(sound, position, color):
 		splatter.global_position = position
 		splatter.scale = Vector2(0.75, 0.75) 
 		splatter.rotation_degrees = randf_range(0, 360)
-		canvas_layer.add_child(splatter)
+		picture_frame.add_child(splatter)
 	if color == "Red":
 		var splatter = Sprite2D.new()
 		splatter.texture = big_red
+		print(position)
 		splatter.global_position = position
-		splatter.scale = Vector2(0.75, 0.75)
+		splatter.scale = Vector2(randf_range(0.25, 1.5), randf_range(0.25, 1.5))
 		splatter.rotation_degrees = randf_range(0, 360)
-		canvas_layer.add_child(splatter)
+		picture_frame.add_child(splatter)
 	if color == "Yellow":
 		var splatter = Sprite2D.new()
 		splatter.texture = big_yellow
 		splatter.global_position = position
 		splatter.scale = Vector2(randf_range(0.25, 1.5), randf_range(0.25, 1.5))
 		splatter.rotation_degrees = randf_range(0, 360)
-		canvas_layer.add_child(splatter)
+		picture_frame.add_child(splatter)
 	death_player.play()
 
 func player_died(is_visible, is_dead):
