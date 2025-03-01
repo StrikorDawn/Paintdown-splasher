@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://ffc626gy1ghe"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_7o63s"]
+[ext_resource type="Texture2D" uid="uid://c6dgxa8b7nep1" path="res://assets/sprites/Start Button.png" id="2_0eyec"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1.0
+offset_right = 1160.0
+offset_bottom = 651.0
+scale = Vector2(0.998066, 1)
+script = ExtResource("1_7o63s")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 381.738
+offset_top = 231.0
+offset_right = 783.738
+offset_bottom = 382.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Paint-Down Splatter"
+horizontal_alignment = 1
+
+[node name="Start" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("2_0eyec")
+icon_alignment = 1
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
