@@ -2,13 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD:Sprite Sheets/Splatters/Blue Splat 1.png.import
-uid="uid://brvcd2nvrax51"
-path="res://.godot/imported/Blue Splat 1.png-072a44ebf2b6ccd700a4eec297c83911.ctex"
-=======
-uid="uid://bvgubcqgt4p4f"
+uid="uid://c8op0x8a7rpea"
 path="res://.godot/imported/Red Splat 1.png-47e6848ab616c977397d2f6076d52c6e.ctex"
->>>>>>> 9e200e957fce26c49aef048d022bf054c9c6e688:assets/sprites/Red Splat 1.png.import
 metadata={
 "vram_texture": false
 }

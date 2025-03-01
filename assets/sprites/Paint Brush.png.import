@@ -2,13 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD:Sprite Sheets/Paint Brush.png.import
-uid="uid://bcoguktjqw4as"
-path="res://.godot/imported/Paint Brush.png-2519868f797d2d1c89933304df8a0205.ctex"
-=======
-uid="uid://be8bbrox2c0gx"
+uid="uid://ciysmdnnvullp"
 path="res://.godot/imported/Paint Brush.png-9b838494aa4ff840f172c676abb5ca48.ctex"
->>>>>>> 9e200e957fce26c49aef048d022bf054c9c6e688:assets/sprites/Paint Brush.png.import
 metadata={
 "vram_texture": false
 }

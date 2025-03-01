@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://caxtuy4ms7oms"]
+[gd_scene load_steps=8 format=3 uid="uid://caxtuy4ms7oms"]
 
 [ext_resource type="PackedScene" uid="uid://b3m87nobrgvqj" path="res://scenes/player.tscn" id="1_fnyou"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_vqm8e"]
@@ -6,11 +6,13 @@
 [ext_resource type="Script" path="res://scripts/base_song.gd" id="5_wqab5"]
 [ext_resource type="Script" path="res://scripts/timer.gd" id="6_rkckm"]
 [ext_resource type="AudioStream" uid="uid://bqm4rqib6k8mh" path="res://assets/music/Painting_Intense.ogg" id="6_vrydv"]
+[ext_resource type="Texture2D" uid="uid://vwilpn0mum5k" path="res://assets/sprites/canvas.webp" id="7_fk0or"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_vqm8e")
 
 [node name="Player" parent="." instance=ExtResource("1_fnyou")]
+z_index = 100
 
 [node name="MousePlayer" parent="." instance=ExtResource("3_7mn15")]
 
@@ -34,6 +36,7 @@ offset_top = -5.0
 offset_right = 948.0
 offset_bottom = 18.0
 scale = Vector2(3.38459, 4.65109)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Hello World"
 
 [node name="countdown_timer" type="Timer" parent="timer"]
@@ -42,5 +45,12 @@ one_shot = true
 autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -15
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+z_index = -15
+position = Vector2(214, 98.0001)
+scale = Vector2(4.6075, 4.09738)
+texture = ExtResource("7_fk0or")
 
 [connection signal="finished" from="base_song" to="base_song" method="_on_finished"]
