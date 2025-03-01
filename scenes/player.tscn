@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cgglvdqoq7ast" path="res://assets/sprites/painter/Idle Animation.png" id="2_arv45"]
 [ext_resource type="Texture2D" uid="uid://ds1vbnwo44d22" path="res://assets/sprites/painter/Walking Animation.png" id="3_kxs7h"]
 [ext_resource type="Texture2D" uid="uid://j4x5okesqnl2" path="res://assets/sprites/painter/Front Walking.png" id="4_c5fps"]
-[ext_resource type="Texture2D" uid="uid://be8bbrox2c0gx" path="res://assets/sprites/Paint Brush.png" id="5_6kep2"]
+[ext_resource type="Texture2D" uid="uid://ciysmdnnvullp" path="res://assets/sprites/Paint Brush.png" id="5_6kep2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hxph0"]
 radius = 32.0
@@ -126,6 +126,33 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3ky8"]
 size = Vector2(88, 160)
 
+[sub_resource type="Animation" id="Animation_asxwf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AttackMarker/AttackArea/AttackCollision/Visual Hitbox:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.435942]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AttackMarker/AttackArea/AttackCollision/Visual Hitbox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-11, -37)]
+}
+
 [sub_resource type="Animation" id="Animation_kjra4"]
 resource_name = "swing"
 length = 0.25
@@ -152,33 +179,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(-11, -37), Vector2(2, 0), Vector2(-11, 39)]
-}
-
-[sub_resource type="Animation" id="Animation_asxwf"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AttackMarker/AttackArea/AttackCollision/Visual Hitbox:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.435942]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AttackMarker/AttackArea/AttackCollision/Visual Hitbox:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-11, -37)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x8f15"]

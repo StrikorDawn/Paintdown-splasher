@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct5be0cm6tibl"
-path="res://.godot/imported/Easil.png-7af6c7a0065ebf91bffe1ea244e6241c.ctex"
+uid="uid://1vfhk0ak1o5d"
+path="res://.godot/imported/Solid_white_bordered.svg.png-dc9badf7fc1709c12af4d2706da87983.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Easil.png"
-dest_files=["res://.godot/imported/Easil.png-7af6c7a0065ebf91bffe1ea244e6241c.ctex"]
+source_file="res://assets/sprites/Solid_white_bordered.svg.png"
+dest_files=["res://.godot/imported/Solid_white_bordered.svg.png-dc9badf7fc1709c12af4d2706da87983.ctex"]
 
 [params]
 

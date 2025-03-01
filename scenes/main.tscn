@@ -1,16 +1,26 @@
-[gd_scene load_steps=7 format=3 uid="uid://caxtuy4ms7oms"]
+[gd_scene load_steps=10 format=3 uid="uid://caxtuy4ms7oms"]
 
 [ext_resource type="PackedScene" uid="uid://b3m87nobrgvqj" path="res://scenes/player.tscn" id="1_fnyou"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_vqm8e"]
 [ext_resource type="PackedScene" uid="uid://8n0psf23t81f" path="res://scenes/mouse_player.tscn" id="3_7mn15"]
 [ext_resource type="Script" path="res://scripts/base_song.gd" id="5_wqab5"]
+[ext_resource type="Texture2D" uid="uid://c8fyi802ok5h8" path="res://assets/sprites/Picture Frame.webp" id="6_mdlg7"]
 [ext_resource type="Script" path="res://scripts/timer.gd" id="6_rkckm"]
 [ext_resource type="AudioStream" uid="uid://bqm4rqib6k8mh" path="res://assets/music/Painting_Intense.ogg" id="6_vrydv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fbi6"]
+size = Vector2(5624.5, 311.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0s22y"]
+size = Vector2(481, 2920)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_vqm8e")
 
 [node name="Player" parent="." instance=ExtResource("1_fnyou")]
+z_index = 100
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="MousePlayer" parent="." instance=ExtResource("3_7mn15")]
 
@@ -25,22 +35,51 @@ second_song = ExtResource("6_vrydv")
 [node name="death_noise" type="AudioStreamPlayer2D" parent="."]
 visible = false
 
-[node name="timer" type="Node" parent="."]
+[node name="picture_frame" type="Sprite2D" parent="."]
+position = Vector2(532, 430)
+scale = Vector2(3.025, 1.95)
+texture = ExtResource("6_mdlg7")
+
+[node name="top_wall" type="CollisionShape2D" parent="picture_frame"]
+position = Vector2(-5.70248, -689.615)
+scale = Vector2(0.330579, 0.512821)
+shape = SubResource("RectangleShape2D_5fbi6")
+
+[node name="bottom_wall" type="CollisionShape2D" parent="picture_frame"]
+position = Vector2(-5.70248, 684.615)
+scale = Vector2(0.330579, 0.512821)
+shape = SubResource("RectangleShape2D_5fbi6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="picture_frame"]
+position = Vector2(-861.157, 3.58977)
+scale = Vector2(0.330579, 0.512821)
+shape = SubResource("RectangleShape2D_0s22y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="picture_frame"]
+position = Vector2(860.496, 3.58977)
+scale = Vector2(0.330579, 0.512821)
+shape = SubResource("RectangleShape2D_0s22y")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -15
+
+[node name="timer" type="Node" parent="CanvasLayer"]
 script = ExtResource("6_rkckm")
 
-[node name="timer_text" type="Label" parent="timer"]
+[node name="timer_text" type="Label" parent="CanvasLayer/timer"]
+z_index = 10
 offset_left = 857.0
 offset_top = -5.0
 offset_right = 948.0
 offset_bottom = 18.0
 scale = Vector2(3.38459, 4.65109)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 0
 text = "Hello World"
 
-[node name="countdown_timer" type="Timer" parent="timer"]
+[node name="countdown_timer" type="Timer" parent="CanvasLayer/timer"]
 wait_time = 120.0
 one_shot = true
 autostart = true
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [connection signal="finished" from="base_song" to="base_song" method="_on_finished"]

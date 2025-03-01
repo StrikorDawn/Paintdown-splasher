@@ -21,7 +21,6 @@ func _ready():
 			health = 60
 			move_speed = 110
 			attack_damage = 15
-			attack_type = "ranged"
 			_load_animation(sprite_frames, "res://assets/sprites/tube/Tube Blue.png", "Blue")
 
 	sprite.frames = sprite_frames  # Assign the dynamically created frames
