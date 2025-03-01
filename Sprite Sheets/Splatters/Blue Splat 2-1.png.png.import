@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://4v5u41su1a7w"
+=======
+uid="uid://ccx6b2vw8csj4"
+>>>>>>> 91a865a41857695e30241331e6f57f43dfd1e066
 path="res://.godot/imported/Blue Splat 2-1.png.png-fa57a4e821406e17858417bf4e735207.ctex"
 metadata={
 "vram_texture": false
