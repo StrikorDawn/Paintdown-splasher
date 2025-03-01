@@ -17,7 +17,11 @@ const big_yellow = preload("res://assets/sprites/Yellow Splat 1.png")
 @onready var player: CharacterBody2D = $Player
 @onready var enemy: EnemyClass
 @onready var death_player: AudioStreamPlayer2D = $death_noise
+<<<<<<< HEAD
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
+=======
+
+>>>>>>> 26641cbd9045af37bb8eff5bc83c6444b415da1c
 ######################################
 # Setup Signals
 ######################################
