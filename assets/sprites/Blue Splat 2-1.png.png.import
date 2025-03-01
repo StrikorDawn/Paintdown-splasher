@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bughdn4lt14dy"
-path="res://.godot/imported/Easil.png-b7f737e96af7f9348c060251bdbec9ab.ctex"
+uid="uid://ckn4fyn4obcjq"
+path="res://.godot/imported/Blue Splat 2-1.png.png-c87b2db98a7f64c08f3473053937c66c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite Sheets/Easil.png"
-dest_files=["res://.godot/imported/Easil.png-b7f737e96af7f9348c060251bdbec9ab.ctex"]
+source_file="res://assets/sprites/Blue Splat 2-1.png.png"
+dest_files=["res://.godot/imported/Blue Splat 2-1.png.png-c87b2db98a7f64c08f3473053937c66c.ctex"]
 
 [params]
 

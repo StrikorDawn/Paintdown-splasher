@@ -2,32 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://b3m87nobrgvqj" path="res://scenes/player.tscn" id="1_fnyou"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_vqm8e"]
-<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://8n0psf23t81f" path="res://scenes/mouse_player.tscn" id="3_7mn15"]
-=======
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://8n0psf23t81f" path="res://scenes/mouse_player.tscn" id="3_7mn15"]
-[ext_resource type="Script" path="res://base_song.gd" id="5_wqab5"]
-[ext_resource type="Script" path="res://scenes/timer.gd" id="6_rkckm"]
-=======
-[ext_resource type="PackedScene" uid="uid://8n0psf23t81f" path="res://scenes/spawner.tscn" id="3_7mn15"]
->>>>>>> 179835f966726ad5cd22c8548e906c9a1a422ebf
-[ext_resource type="Script" path="res://scenes/base_song.gd" id="5_wqab5"]
->>>>>>> 91a865a41857695e30241331e6f57f43dfd1e066
+[ext_resource type="Script" path="res://scripts/base_song.gd" id="5_wqab5"]
+[ext_resource type="Script" path="res://scripts/timer.gd" id="6_rkckm"]
 [ext_resource type="AudioStream" uid="uid://bqm4rqib6k8mh" path="res://assets/music/Painting_Intense.ogg" id="6_vrydv"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_vqm8e")
 
 [node name="Player" parent="." instance=ExtResource("1_fnyou")]
-visible = false
 
 [node name="MousePlayer" parent="." instance=ExtResource("3_7mn15")]
-<<<<<<< HEAD
-visible = false
-=======
 script = null
->>>>>>> 91a865a41857695e30241331e6f57f43dfd1e066
 
 [node name="base_song" type="AudioStreamPlayer2D" parent="."]
 visible = false
@@ -37,7 +23,6 @@ parameters/looping = false
 script = ExtResource("5_wqab5")
 second_song = ExtResource("6_vrydv")
 
-<<<<<<< HEAD
 [node name="death_noise" type="AudioStreamPlayer2D" parent="."]
 visible = false
 
@@ -56,8 +41,7 @@ text = "Hello World"
 wait_time = 120.0
 one_shot = true
 autostart = true
-=======
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
->>>>>>> 518adf28221cf289cf43e8a2bb812dfd2d27fe6d
 
 [connection signal="finished" from="base_song" to="base_song" method="_on_finished"]

@@ -16,11 +16,10 @@ var can_attack: bool = true
 @onready var attack_timer: Timer = $AttackTimer
 @onready var player = get_tree().get_first_node_in_group("Player")
 @onready var hitbox : Area2D = $Hitbox
-<<<<<<< HEAD
+
 @onready var hit_sound : AudioStreamPlayer2D = $HitSound
 @onready var death_sound : AudioStreamPlayer2D = $DeathSound
-=======
->>>>>>> 518adf28221cf289cf43e8a2bb812dfd2d27fe6d
+
 
 func _ready():
 	hitbox.body_entered.connect(_on_hitbox_body_entered)

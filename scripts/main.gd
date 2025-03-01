@@ -10,7 +10,7 @@ const BUCKET_ENEMY = preload("res://scenes/bucket_enemy.tscn")
 ######################################
 # Node References
 ######################################
-@onready var mouse_player = $MousePlayer
+@onready var mouse_player: Node2D = $MousePlayer
 @onready var player: CharacterBody2D = $Player
 @onready var enemy: EnemyClass
 @onready var death_player: AudioStreamPlayer2D = $death_noise
