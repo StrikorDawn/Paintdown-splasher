@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b3m87nobrgvqj" path="res://scenes/player.tscn" id="1_fnyou"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_vqm8e"]
-[ext_resource type="PackedScene" uid="uid://8n0psf23t81f" path="res://scenes/spawner.tscn" id="3_7mn15"]
+[ext_resource type="PackedScene" uid="uid://8n0psf23t81f" path="res://scenes/mouse_player.tscn" id="3_7mn15"]
 [ext_resource type="Script" path="res://scenes/base_song.gd" id="5_wqab5"]
 [ext_resource type="AudioStream" uid="uid://bqm4rqib6k8mh" path="res://assets/music/Painting_Intense.ogg" id="6_vrydv"]
 

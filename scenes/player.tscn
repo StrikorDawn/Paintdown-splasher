@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cgglvdqoq7ast" path="res://assets/sprites/painter/Idle Animation.png" id="2_arv45"]
 [ext_resource type="Texture2D" uid="uid://ds1vbnwo44d22" path="res://assets/sprites/painter/Walking Animation.png" id="3_kxs7h"]
 [ext_resource type="Texture2D" uid="uid://j4x5okesqnl2" path="res://assets/sprites/painter/Front Walking.png" id="4_c5fps"]
-[ext_resource type="Texture2D" uid="uid://dr06l64ie5v4n" path="res://Sprite Sheets/Paint Brush.png" id="5_6kep2"]
+[ext_resource type="Texture2D" uid="uid://b5xxc14g0k6lu" path="res://Sprite Sheets/Paint Brush.png" id="5_6kep2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hxph0"]
 radius = 32.0
@@ -200,7 +200,7 @@ scale = Vector2(1.6, 1.86667)
 sprite_frames = SubResource("SpriteFrames_qgyg8")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.490878
+frame_progress = 0.668447
 
 [node name="AttackMarker" type="Marker2D" parent="."]
 
