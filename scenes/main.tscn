@@ -20,4 +20,6 @@ parameters/looping = false
 script = ExtResource("5_wqab5")
 second_song = ExtResource("6_vrydv")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
 [connection signal="finished" from="base_song" to="base_song" method="_on_finished"]

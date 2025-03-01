@@ -43,5 +43,5 @@ func _player_attack(damage, attack_area):
 			body.take_damage(damage)  # Call the enemy's damage function
 
 func _enemy_attack(damage, body):
-	#if body.is_in_group("Player"):  # Check if it's an enemy
+	if body.is_in_group("Player"):  # Check if it's an enemy
 		body.take_damage(damage)  # Call the enemy's damage function

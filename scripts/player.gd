@@ -25,6 +25,7 @@ var can_attack : bool = true
 ######################################
 var health : int = 100
 var damage : int = 20
+var last_direction : Vector2 = Vector2(1, 0)  # Default facing right
 ######################################
 # Player State Variables
 ######################################
@@ -37,6 +38,10 @@ func _physics_process(_delta: float):
 		get_tree().quit()
 	var direction = Input.get_vector("move_left","move_right","move_up","move_down")
 	handle_animation(direction)
+	
+	if direction != Vector2.ZERO:
+		last_direction = direction
+		
 	if Input.is_action_just_pressed("attack") and can_attack == true:
 		attack(direction)
 	
@@ -47,34 +52,43 @@ func _physics_process(_delta: float):
 	move_and_slide()
 
 func handle_animation(direction):
-	if direction == Vector2(-1,0):
+	if direction.x < 0:
 		sprite_2d.flip_h = true
 		sprite_2d.play("walking")
-	elif direction == Vector2(1,0):
+	elif direction.x > 0:
 		sprite_2d.flip_h = false
 		sprite_2d.play("walking")
-	elif direction == Vector2(0,-1):
+	elif direction.y < 0:
 		sprite_2d.play("walking_up")
-	elif direction == Vector2(0,1):
+	elif direction.y > 0:
 		sprite_2d.play("walking")
+	else:
+		# Maintain facing direction when idle
+		if last_direction.y < 0:
+			sprite_2d.play("idle_up")
+		else:
+			sprite_2d.play("idle")
 
 
 func attack(direction):
 	can_attack = false
 	attack_area.set_monitoring(true)
 	visual_hitbox.visible = true
-	if direction == Vector2(-1,0):
+
+	# Use last direction for attack rotation
+	if last_direction == Vector2(-1, 0):  # Left
 		attack_marker.rotation_degrees = 180
 		attack_area.position.x = 40
-	elif direction == Vector2(1,0):
+	elif last_direction == Vector2(1, 0):  # Right
 		attack_marker.rotation_degrees = 0
 		attack_area.position.x = 40
-	elif direction == Vector2(0,-1):
+	elif last_direction == Vector2(0, -1):  # Up
 		attack_marker.rotation_degrees = 270
 		attack_area.position.x = 72
-	elif direction == Vector2(0,1):
+	elif last_direction == Vector2(0, 1):  # Down
 		attack_marker.rotation_degrees = 90
 		attack_area.position.x = 72
+
 	attack_timer.start()
 
 func _on_attack_area_entered(body: Node2D) -> void:

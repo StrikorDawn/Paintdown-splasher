@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b3m87nobrgvqj"]
+[gd_scene load_steps=21 format=3 uid="uid://b3m87nobrgvqj"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_n17q2"]
 [ext_resource type="Texture2D" uid="uid://cgglvdqoq7ast" path="res://assets/sprites/painter/Idle Animation.png" id="2_arv45"]
@@ -20,6 +20,14 @@ region = Rect2(50, 0, 50, 60)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hwlk4"]
 atlas = ExtResource("2_arv45")
+region = Rect2(0, 60, 50, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whyl3"]
+atlas = ExtResource("4_c5fps")
+region = Rect2(0, 0, 50, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anucw"]
+atlas = ExtResource("4_c5fps")
 region = Rect2(0, 60, 50, 60)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wv8op"]
@@ -71,6 +79,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_whyl3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_anucw")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_wv8op")
 }, {
 "duration": 1.0,
@@ -118,9 +137,9 @@ texture_filter = 1
 position = Vector2(8, 0)
 scale = Vector2(1.6, 1.86667)
 sprite_frames = SubResource("SpriteFrames_qgyg8")
-animation = &"walking_up"
-frame = 2
-frame_progress = 0.0124203
+animation = &"idle_up"
+autoplay = "idle"
+frame_progress = 0.0427562
 
 [node name="AttackMarker" type="Marker2D" parent="."]
 
@@ -143,7 +162,7 @@ wait_time = 0.25
 one_shot = true
 
 [node name="AttackCooldownTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.33
 
 [connection signal="body_entered" from="AttackMarker/AttackArea" to="." method="_on_attack_area_entered"]
 [connection signal="timeout" from="AttackLengthTimer" to="." method="_on_attack_timer_timeout"]

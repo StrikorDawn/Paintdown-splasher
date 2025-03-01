@@ -15,6 +15,7 @@ var can_attack: bool = true
 @onready var attack_timer: Timer = $AttackTimer
 @onready var player = get_tree().get_first_node_in_group("Player")
 @onready var hitbox : Area2D = $Hitbox
+
 func _ready():
 	hitbox.body_entered.connect(_on_hitbox_body_entered)
 
